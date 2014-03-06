@@ -9,7 +9,9 @@ public class MovePlayer : MonoBehaviour {
 
 	public float gravity = 9.8f;
 	public float speed = 1f;
-	public float acceleration = 10f;
+	public float sidespeed = 10f;
+	public float sideacceleration = 10f;
+	public float forwardacceleration = 10f;
 
 	int lastKeyPress = 1;
 
@@ -27,20 +29,23 @@ public class MovePlayer : MonoBehaviour {
 			if (lastKeyPress == 1) lastKeyPress = 0;
 			else lastKeyPress = 1;
 
-			if (Input.GetKey(KeyCode.LeftArrow))
-				moveVector -= transform.right;
-			if (Input.GetKey(KeyCode.RightArrow))
-				moveVector += transform.right;
-
 			moveVector += transform.forward;
 		}
-		
-		if (controller.isGrounded){
-			velocity.x = Mathf.Lerp(velocity.x, moveVector.x*speed, Time.deltaTime * acceleration);
-			velocity.z = Mathf.Lerp(velocity.z, moveVector.z*speed, Time.deltaTime * acceleration);
+
+		if (Mathf.Abs(velocity.z) > 1f){
+			if (Input.GetKeyDown(KeyCode.LeftArrow))
+				moveVector -= transform.right;
+			if (Input.GetKeyDown(KeyCode.RightArrow))
+				moveVector += transform.right;
 		}
-		
-		velocity.y -= gravity * Time.deltaTime;
+
+		if (controller.isGrounded){
+			velocity.x = Mathf.Lerp(velocity.x, moveVector.normalized.x*sidespeed, Time.deltaTime * sideacceleration);
+			velocity.z = Mathf.Lerp(velocity.z, moveVector.normalized.z*speed, Time.deltaTime * forwardacceleration);
+		}
+
+		if(!controller.isGrounded)
+			velocity.y -= gravity * Time.deltaTime;
 		controller.Move(velocity * Time.deltaTime);
 
 	}
