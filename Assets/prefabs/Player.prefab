@@ -827,7 +827,9 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 67747a4bc8f654a8ea66af0133281bf4, type: 3}
   m_Animations:
+  - {fileID: 7400002, guid: 67747a4bc8f654a8ea66af0133281bf4, type: 3}
   - {fileID: 7400000, guid: 67747a4bc8f654a8ea66af0133281bf4, type: 3}
+  - {fileID: 7400004, guid: 67747a4bc8f654a8ea66af0133281bf4, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -845,8 +847,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: 1000
   speed: 250
-  sidespeed: 100
-  sideacceleration: 20
+  sidespeed: 125
+  sideacceleration: 2
   forwardacceleration: 1
 --- !u!124 &12400000
 Behaviour:

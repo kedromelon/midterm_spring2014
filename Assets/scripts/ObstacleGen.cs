@@ -14,10 +14,13 @@ public class ObstacleGen : MonoBehaviour {
 			//Vector3 place = new Vector3(randomVector.x, 1f, randomVector.z);
 			//Instantiate(tree, place, Quaternion.identity);
 
-			Instantiate(thing, new Vector3(
-				Random.Range(collider.bounds.min.x, collider.bounds.max.x),
-				0f,
-				Random.Range(collider.bounds.min.z, collider.bounds.max.z)), Quaternion.identity);
+			Vector3 randomspot = new Vector3(Random.Range(collider.bounds.min.x, collider.bounds.max.x),
+			                                 0f,
+			                                 Random.Range(collider.bounds.min.z, collider.bounds.max.z));
+
+			GameObject newthing = Instantiate(thing,randomspot,Quaternion.identity) as GameObject;
+		
+			newthing.transform.Rotate(0f, Random.Range(0f,360f), 0f);
 		}
 	}
 	
