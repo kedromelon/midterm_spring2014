@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1259688e69be4961abf682709aaea49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thingsToMake: 200
+  thingsToMake: 400
   thing: {fileID: 100010, guid: f87754dcd046b4b83a8b5e5e81817ee0, type: 2}
 --- !u!23 &743781994
 Renderer:

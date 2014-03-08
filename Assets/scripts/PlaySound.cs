@@ -3,10 +3,10 @@ using System.Collections;
 
 public class PlaySound : MonoBehaviour {
 
-	AudioClip sound;
+	//public AudioClip sound;
 
 
 	void OnTriggerEnter(Collider c){
-		GetComponent<AudioSource>().PlayOneShot(sound);
+		GetComponent<AudioSource>().Play();
 	}
 }
