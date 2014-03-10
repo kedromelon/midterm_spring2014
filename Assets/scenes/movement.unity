@@ -273,7 +273,8 @@ Transform:
   m_LocalRotation: {x: .0821011662, y: 0, z: 0, w: .996623993}
   m_LocalPosition: {x: 0, y: 1.70948291, z: -3.74148154}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 560949848}
   m_Father: {fileID: 1047034088}
 --- !u!114 &378108668
 MonoBehaviour:
@@ -287,6 +288,76 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxoffset: 5
+--- !u!1 &560949847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 560949848}
+  - 23: {fileID: 560949850}
+  - 102: {fileID: 560949849}
+  m_Layer: 0
+  m_Name: timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &560949848
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 560949847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.07713985, y: 3.17702293, z: 9.99999905}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 378108667}
+--- !u!102 &560949849
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 560949847}
+  m_Text: number
+  m_OffsetZ: 0
+  m_CharacterSize: .100000001
+  m_LineSpacing: 1
+  m_Anchor: 6
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 200
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: 92f6134dea7984665b64ccca47ccdfa3, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+--- !u!23 &560949850
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 560949847}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 92f6134dea7984665b64ccca47ccdfa3, type: 3}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!1 &700375814
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +625,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1267363480}
   m_GameObject: {fileID: 887094974}
   m_Mesh: {fileID: 4300016, guid: 67747a4bc8f654a8ea66af0133281bf4, type: 3}
+--- !u!1 &956704418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 956704419}
+  - 114: {fileID: 956704420}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &956704419
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 956704418}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &956704420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 956704418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aed3fb476922415582cbef957caf07e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 10
+  timertext: {fileID: 560949849}
 --- !u!1 &1008981635
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +775,7 @@ MonoBehaviour:
   sidespeed: 125
   sideacceleration: 2
   forwardacceleration: 1
+  scoremanager: {fileID: 956704420}
 --- !u!23 &1047034090
 Renderer:
   m_ObjectHideFlags: 0
@@ -1039,6 +1151,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: .996623993
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a80878061b6754e9faaba5292902167f, type: 2}
+      propertyPath: scoremanager
+      value: 
+      objectReference: {fileID: 956704420}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a80878061b6754e9faaba5292902167f, type: 2}
   m_RootGameObject: {fileID: 1047034087}

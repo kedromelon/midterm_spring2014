@@ -13,6 +13,8 @@ public class MovePlayer : MonoBehaviour {
 	public float sideacceleration = 10f;
 	public float forwardacceleration = 10f;
 
+	public ScoreManager scoremanager;
+
 	Animation playerAnimation;
 
 	int lastKeyPress = 1;
@@ -58,6 +60,10 @@ public class MovePlayer : MonoBehaviour {
 		if (velocity.magnitude < .1f)
 			playerAnimation.Play("idle");
 
+	}
+
+	void OnTriggerEnter(Collider c){
+		scoremanager.timer++;
 	}
 	
 

@@ -816,21 +816,21 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100034}
-  m_Mesh: {fileID: 4300004, guid: d663a4cd818834176b743783579cd42e, type: 3}
+  m_Mesh: {fileID: 4300004, guid: ca01eb841a8df964585f9a730bca7fe9, type: 3}
 --- !u!33 &3300004
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100036}
-  m_Mesh: {fileID: 4300002, guid: d663a4cd818834176b743783579cd42e, type: 3}
+  m_Mesh: {fileID: 4300002, guid: ca01eb841a8df964585f9a730bca7fe9, type: 3}
 --- !u!33 &3300006
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100038}
-  m_Mesh: {fileID: 4300000, guid: d663a4cd818834176b743783579cd42e, type: 3}
+  m_Mesh: {fileID: 4300000, guid: ca01eb841a8df964585f9a730bca7fe9, type: 3}
 --- !u!65 &6500000
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -909,7 +909,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100052}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d663a4cd818834176b743783579cd42e, type: 3}
+  m_Avatar: {fileID: 9000000, guid: ca01eb841a8df964585f9a730bca7fe9, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_ApplyRootMotion: 1
