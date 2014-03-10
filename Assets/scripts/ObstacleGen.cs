@@ -21,7 +21,7 @@ public class ObstacleGen : MonoBehaviour {
 			}
 
 			Vector3 randomspot = new Vector3(Random.Range(collider.bounds.min.x, collider.bounds.max.x),
-			                                 0f,
+			                                 transform.position.y,
 			                                 Random.Range(collider.bounds.min.z, collider.bounds.max.z));
 
 			GameObject newthing = Instantiate(thingToSpawn,randomspot,Quaternion.identity) as GameObject;
