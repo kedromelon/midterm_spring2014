@@ -93,7 +93,7 @@ GameObject:
   - 4: {fileID: 400010}
   m_Layer: 0
   m_Name: rabbit
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,7 @@ GameObject:
   - 65: {fileID: 6500000}
   m_Layer: 0
   m_Name: rabbit
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

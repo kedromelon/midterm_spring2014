@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/PlaySound.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/ObstacleGen.cs">
     <Files>
-      <File FileName="Assets/scripts/PlaySound.cs" Line="10" Column="36" />
+      <File FileName="Assets/scripts/ObstacleGen.cs" Line="26" Column="4" />
+      <File FileName="Assets/scripts/PlaySound.cs" Line="6" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

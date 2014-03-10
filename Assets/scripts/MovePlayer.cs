@@ -28,7 +28,7 @@ public class MovePlayer : MonoBehaviour {
 		velocity = controller.velocity;
 		moveVector = Vector3.zero;
 
-		if (Input.GetKeyDown(KeyCode.Z) && lastKeyPress == 1 || Input.GetKeyDown(KeyCode.X) && lastKeyPress == 0){
+		if (Input.GetKeyDown(KeyCode.J) && lastKeyPress == 1 || Input.GetKeyDown(KeyCode.K) && lastKeyPress == 0){
 			if (lastKeyPress == 1){
 				playerAnimation.Play("rightlegforward");
 				lastKeyPress = 0;
@@ -38,9 +38,9 @@ public class MovePlayer : MonoBehaviour {
 				lastKeyPress = 1;
 			}
 
-			if (Input.GetKey(KeyCode.LeftArrow))
+			if (Input.GetKey(KeyCode.A))
 				moveVector -= transform.right;
-			if (Input.GetKey(KeyCode.RightArrow))
+			if (Input.GetKey(KeyCode.D))
 				moveVector += transform.right;
 
 			moveVector += transform.forward;
@@ -59,14 +59,8 @@ public class MovePlayer : MonoBehaviour {
 			playerAnimation.Play("idle");
 
 	}
-
-	void OnControllerColliderHit(ControllerColliderHit hit){
-
-		if (hit.gameObject.tag == "Obstacle"){
-			Debug.Log("OW");
-		}
-	}
 	
+
 
 
 	
