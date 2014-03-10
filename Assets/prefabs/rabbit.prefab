@@ -241,7 +241,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: cae877eba053148788da531d389484f5, type: 2}
+  - {fileID: 2100000, guid: 7e9b414b72a684e2482b281adc146aa2, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -262,7 +262,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: cae877eba053148788da531d389484f5, type: 2}
+  - {fileID: 2100000, guid: 1dfc0a4eafc9f4f9bb21f4a2d0421fe6, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -283,7 +283,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: cae877eba053148788da531d389484f5, type: 2}
+  - {fileID: 2100000, guid: dbc73be35b9d14c99aacf7eeab76ef94, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -304,7 +304,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: cae877eba053148788da531d389484f5, type: 2}
+  - {fileID: 2100000, guid: 7e9b414b72a684e2482b281adc146aa2, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -368,9 +368,9 @@ AudioSource:
   m_GameObject: {fileID: 100012}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 1b34b649e9d7b49368f231c9fd721243, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9fe46f2e6f0f54b87ab5ede9cf16f178, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .5
   m_Pitch: 1
   Loop: 0
   Mute: 0
