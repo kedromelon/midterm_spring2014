@@ -255,7 +255,7 @@ GameObject:
   - 4: {fileID: 400028}
   - 108: {fileID: 10800000}
   m_Layer: 0
-  m_Name: Point light
+  m_Name: light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,7 +436,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: .75964582}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -913,11 +913,11 @@ Light:
   m_GameObject: {fileID: 100028}
   m_Enabled: 1
   serializedVersion: 3
-  m_Type: 2
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Type: 0
+  m_Color: {r: 1, g: .661764741, b: .661764741, a: 1}
   m_Intensity: 1
-  m_Range: 5
-  m_SpotAngle: 30
+  m_Range: 200
+  m_SpotAngle: 85
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
