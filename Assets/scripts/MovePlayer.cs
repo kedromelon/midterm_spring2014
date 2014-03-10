@@ -9,13 +9,18 @@ public class MovePlayer : MonoBehaviour {
 
 	public float gravity = 9.8f;
 	public float speed = 1f;
-	public float acceleration = 10f;
+	public float sidespeed = 10f;
+	public float sideacceleration = 10f;
+	public float forwardacceleration = 10f;
+
+	Animation playerAnimation;
 
 	int lastKeyPress = 1;
 
 	// Use this for initialization
 	void Start () {
 		controller = GetComponent<CharacterController>();
+		playerAnimation = GetComponentInChildren<Animation>();
 	}
 	
 	// Update is called once per frame
@@ -23,35 +28,39 @@ public class MovePlayer : MonoBehaviour {
 		velocity = controller.velocity;
 		moveVector = Vector3.zero;
 
-		if (Input.GetKeyDown(KeyCode.Z) && lastKeyPress == 1 || Input.GetKeyDown(KeyCode.X) && lastKeyPress == 0){
-			if (lastKeyPress == 1) lastKeyPress = 0;
-			else lastKeyPress = 1;
+		if (Input.GetKeyDown(KeyCode.J) && lastKeyPress == 1 || Input.GetKeyDown(KeyCode.K) && lastKeyPress == 0){
+			if (lastKeyPress == 1){
+				playerAnimation.Play("rightlegforward");
+				lastKeyPress = 0;
+			}
+			else{
+				playerAnimation.Play("leftlegforward");
+				lastKeyPress = 1;
+			}
 
-			if (Input.GetKey(KeyCode.LeftArrow))
+			if (Input.GetKey(KeyCode.A))
 				moveVector -= transform.right;
-			if (Input.GetKey(KeyCode.RightArrow))
+			if (Input.GetKey(KeyCode.D))
 				moveVector += transform.right;
 
 			moveVector += transform.forward;
 		}
-		
+
 		if (controller.isGrounded){
-			velocity.x = Mathf.Lerp(velocity.x, moveVector.x*speed, Time.deltaTime * acceleration);
-			velocity.z = Mathf.Lerp(velocity.z, moveVector.z*speed, Time.deltaTime * acceleration);
+			velocity.x = Mathf.Lerp(velocity.x, moveVector.normalized.x*sidespeed, Time.deltaTime * sideacceleration);
+			velocity.z = Mathf.Lerp(velocity.z, moveVector.normalized.z*speed, Time.deltaTime * forwardacceleration);
 		}
-		
-		velocity.y -= gravity * Time.deltaTime;
+
+		if(!controller.isGrounded)
+			velocity.y -= gravity * Time.deltaTime;
 		controller.Move(velocity * Time.deltaTime);
 
-	}
+		if (velocity.magnitude < .1f)
+			playerAnimation.Play("idle");
 
-	void OnControllerColliderHit(ControllerColliderHit hit){
-
-		if (hit.gameObject.tag == "Obstacle"){
-			Debug.Log("OW");
-		}
 	}
 	
+
 
 
 	
