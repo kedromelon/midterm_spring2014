@@ -30,7 +30,8 @@ public class MovePlayer : MonoBehaviour {
 		velocity = controller.velocity;
 		moveVector = Vector3.zero;
 
-		if (Input.GetKeyDown(KeyCode.J) && lastKeyPress == 1 || Input.GetKeyDown(KeyCode.K) && lastKeyPress == 0){
+		if (Input.GetKeyDown(KeyCode.J) && !Input.GetKeyDown(KeyCode.K) && lastKeyPress == 1 
+		    || Input.GetKeyDown(KeyCode.K) && !Input.GetKeyDown(KeyCode.J) && lastKeyPress == 0){
 			if (lastKeyPress == 1){
 				playerAnimation.Play("rightlegforward");
 				lastKeyPress = 0;

@@ -39,6 +39,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 10
+  countdownspeed: 1.29999995
   incrementamount: 1
   timertext: {fileID: 0}
 --- !u!1001 &100100000

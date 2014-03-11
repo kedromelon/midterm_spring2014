@@ -5,6 +5,8 @@ public class ScoreManager : MonoBehaviour {
 
 	public float timer = 10f;
 
+	public float countdownspeed = 1f;
+
 	public float incrementamount = 1f;
 
 	public TextMesh timertext;
@@ -14,7 +16,7 @@ public class ScoreManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (!isStopped) timer -= Time.deltaTime;
+		if (!isStopped) timer -= Time.deltaTime * countdownspeed;
 
 		timertext.text = timer.ToString("00.00");
 
