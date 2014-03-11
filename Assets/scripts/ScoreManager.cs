@@ -10,6 +10,6 @@ public class ScoreManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer = Mathf.Lerp(timer, 0, Time.deltaTime * .1f);
-		timertext.text = timer.ToString();
+		timertext.text = timer.ToString("00.00");
 	}
 }
