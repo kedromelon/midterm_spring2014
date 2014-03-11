@@ -5,11 +5,30 @@ public class ScoreManager : MonoBehaviour {
 
 	public float timer = 10f;
 
+	public float incrementamount = 1f;
+
 	public TextMesh timertext;
+
+	bool isStopped = false;
 
 	// Update is called once per frame
 	void Update () {
-		timer = Mathf.Lerp(timer, 0, Time.deltaTime * .1f);
+
+		if (!isStopped) timer -= Time.deltaTime;
+
 		timertext.text = timer.ToString("00.00");
+
+	}
+
+	public void FreezeTimer(){
+		isStopped = true;
+	}
+
+	public void MakeScoreRed(){
+		timertext.color = Color.red;
+	}
+
+	public void IncrementScore(){
+		timer += incrementamount;
 	}
 }

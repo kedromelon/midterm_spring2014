@@ -8,6 +8,8 @@ public class ObstacleGen : MonoBehaviour {
 	public GameObject thing;
 	public GameObject thing2;
 
+	public GameObject scoretrigger;
+
 	// Use this for initialization
 	void Start () {
 		for (int i = 0; i < thingsToMake; i++){
@@ -25,6 +27,9 @@ public class ObstacleGen : MonoBehaviour {
 			                                 Random.Range(collider.bounds.min.z, collider.bounds.max.z));
 
 			GameObject newthing = Instantiate(thingToSpawn,randomspot,Quaternion.identity) as GameObject;
+
+			if (scoretrigger != null)
+				Instantiate(scoretrigger, new Vector3(transform.position.x, transform.position.y, randomspot.z), Quaternion.identity);
 		
 			newthing.transform.Rotate(0f, Random.Range(0f,360f), 0f);
 		}

@@ -60,14 +60,36 @@ public class MovePlayer : MonoBehaviour {
 		if (velocity.magnitude < .1f)
 			playerAnimation.Play("idle");
 
+		if (scoremanager.timer <= 0f){
+			scoremanager.timer = 0f;
+			Lose();
+		}
+
 	}
 
-	void OnTriggerEnter(Collider c){
-		scoremanager.timer++;
+	void OnTriggerExit(Collider c){
+		if (c.tag == "Score") scoremanager.IncrementScore();
+	}
+
+	void OnControllerColliderHit(ControllerColliderHit c){
+		if (c.gameObject.tag == "Obstacle"){
+			Lose();
+		}
 	}
 	
+	IEnumerator EndAfterSeconds(){
+		GetComponent<MovePlayer>().enabled = false;
+		yield return new WaitForSeconds(.5f);
+		ScreenShake2D.Shake(0f,0f);
+		Application.LoadLevel(Application.loadedLevel);
+	}
 
-
-
+	void Lose(){
+		scoremanager.FreezeTimer();
+		scoremanager.MakeScoreRed();
+		ScreenShake2D.Shake(.25f,.5f);
+		GetComponent<AudioSource>().Play();
+		StartCoroutine("EndAfterSeconds");
+	}
 	
 }
