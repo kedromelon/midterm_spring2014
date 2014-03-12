@@ -1067,11 +1067,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831da45ea26ae4a03ab78642e9a4d82c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 1000
+  gravity: 50
   speed: 250
-  sidespeed: 70
-  sideacceleration: 4
-  forwardacceleration: 1
+  sidespeeddivider: 4.5
+  sideacceleration: 2
+  forwardacceleration: .75
   scoremanager: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -1111,7 +1111,7 @@ CharacterController:
   m_GameObject: {fileID: 100002}
   serializedVersion: 2
   m_Height: 2
-  m_Radius: .449999988
+  m_Radius: .300000012
   m_SlopeLimit: 0
   m_StepOffset: .300000012
   m_SkinWidth: .0799999982

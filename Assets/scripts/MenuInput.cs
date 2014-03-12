@@ -2,18 +2,12 @@
 using System.Collections;
 
 public class MenuInput : MonoBehaviour {
-
-	public KeyCode buttonToPush = KeyCode.Space;
-	public string nextLevel = "typeInSceneNameHere";
-
-	// Use this for initialization
-	void Start () {
 	
-	}
+	public string nextLevel = "typeInSceneNameHere";
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(buttonToPush)){
+		if (Input.anyKeyDown){
 			Application.LoadLevel(nextLevel);
 		}
 	}

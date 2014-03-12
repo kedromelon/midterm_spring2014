@@ -9,7 +9,8 @@ public class MovePlayer : MonoBehaviour {
 
 	public float gravity = 9.8f;
 	public float speed = 1f;
-	public float sidespeed = 10f;
+	float sidespeed;
+	public float sidespeeddivider = 4f;
 	public float sideacceleration = 10f;
 	public float forwardacceleration = 10f;
 
@@ -41,12 +42,17 @@ public class MovePlayer : MonoBehaviour {
 				lastKeyPress = 1;
 			}
 
+
+
+			moveVector += transform.forward;
+		}
+
+		if (velocity.z != 0f){
 			if (Input.GetKey(KeyCode.A))
 				moveVector -= transform.right;
 			if (Input.GetKey(KeyCode.D))
 				moveVector += transform.right;
-
-			moveVector += transform.forward;
+			sidespeed = velocity.z/sidespeeddivider;
 		}
 
 		if (controller.isGrounded){

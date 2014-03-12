@@ -1,12 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/MovePlayer.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../studio_spring2014/week07/Assets/MenuInput.cs">
     <Files>
-      <File FileName="Assets/scripts/ScoreManager.cs" Line="19" Column="59" />
-      <File FileName="Assets/scripts/ScreenShakeUpdater.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/MovePlayer.cs" Line="34" Column="72" />
-      <File FileName="Assets/scripts/ScoreManager.cs" Line="19" Column="59" />
-      <File FileName="Assets/scripts/ObstacleGen.cs" Line="1" Column="1" />
+      <File FileName="../studio_spring2014/week07/Assets/MenuInput.cs" Line="16" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
