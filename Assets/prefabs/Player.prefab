@@ -1069,8 +1069,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: 1000
   speed: 250
-  sidespeed: 125
-  sideacceleration: 2
+  sidespeed: 70
+  sideacceleration: 4
   forwardacceleration: 1
   scoremanager: {fileID: 0}
 --- !u!114 &11400002
