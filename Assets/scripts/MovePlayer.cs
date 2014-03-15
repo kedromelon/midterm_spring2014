@@ -42,8 +42,6 @@ public class MovePlayer : MonoBehaviour {
 				lastKeyPress = 1;
 			}
 
-
-
 			moveVector += transform.forward;
 		}
 
@@ -72,6 +70,10 @@ public class MovePlayer : MonoBehaviour {
 			Lose();
 		}
 
+	}
+
+	void OnTriggerEnter(Collider c){
+		if (c.gameObject.name == "Igloo") StartCoroutine("EndAfterSeconds");
 	}
 
 	void OnTriggerExit(Collider c){

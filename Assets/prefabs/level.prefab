@@ -1590,6 +1590,7 @@ GameObject:
   - 33: {fileID: 3300148}
   - 23: {fileID: 2300148}
   - 95: {fileID: 9500010}
+  - 64: {fileID: 6400074}
   m_Layer: 0
   m_Name: Igloo
   m_TagString: Untagged
@@ -15152,6 +15153,19 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 0}
+--- !u!64 &6400074
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: aa74f3d31e1993a419099acbb4834008, type: 3}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2
