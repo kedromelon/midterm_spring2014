@@ -51,6 +51,7 @@ public class MovePlayer : MonoBehaviour {
 			if (Input.GetKey(KeyCode.D))
 				moveVector += transform.right;
 			sidespeed = velocity.z/sidespeeddivider;
+
 		}
 
 		if (controller.isGrounded){
@@ -69,7 +70,12 @@ public class MovePlayer : MonoBehaviour {
 			scoremanager.timer = 0f;
 			Lose();
 		}
+	}
 
+	void OnControllerColliderHit(ControllerColliderHit c){
+		if (c.gameObject.tag == "Obstacle"){
+			GetComponent<MovePlayer>().Lose();
+		}
 	}
 
 	void OnTriggerEnter(Collider c){
@@ -80,12 +86,6 @@ public class MovePlayer : MonoBehaviour {
 		if (c.tag == "Score") scoremanager.IncrementScore();
 	}
 
-	void OnControllerColliderHit(ControllerColliderHit c){
-		if (c.gameObject.tag == "Obstacle"){
-			Lose();
-		}
-	}
-	
 	IEnumerator EndAfterSeconds(){
 		GetComponent<MovePlayer>().enabled = false;
 		yield return new WaitForSeconds(.5f);
@@ -93,7 +93,7 @@ public class MovePlayer : MonoBehaviour {
 		Application.LoadLevel(Application.loadedLevel);
 	}
 
-	void Lose(){
+	public void Lose(){
 		scoremanager.FreezeTimer();
 		scoremanager.MakeScoreRed();
 		ScreenShake2D.Shake(.25f,.5f);

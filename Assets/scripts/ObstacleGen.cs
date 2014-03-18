@@ -5,8 +5,11 @@ public class ObstacleGen : MonoBehaviour {
 
 	public int thingsToMake = 200;
 
+	public int powerupsToMake = 20;
+
 	public GameObject thing;
 	public GameObject thing2;
+	public GameObject powerup;
 
 	public GameObject scoretrigger;
 
@@ -32,6 +35,15 @@ public class ObstacleGen : MonoBehaviour {
 				Instantiate(scoretrigger, new Vector3(transform.position.x, transform.position.y, randomspot.z), Quaternion.identity);
 		
 			newthing.transform.Rotate(0f, Random.Range(0f,360f), 0f);
+		}
+
+		if (powerup != null){
+			for (int i = 0; i < powerupsToMake; i++){
+				Vector3 randomspot = new Vector3(Random.Range(collider.bounds.min.x, collider.bounds.max.x),
+				                                 transform.position.y + 1f,
+				                                 Random.Range(collider.bounds.min.z, collider.bounds.max.z));
+				Instantiate(powerup,randomspot,Quaternion.identity);
+			}
 		}
 	}
 	

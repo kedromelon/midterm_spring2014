@@ -15563,8 +15563,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingsToMake: 200
+  powerupsToMake: 20
   thing: {fileID: 100000, guid: a57d181aede5d4f348887db21958c1f4, type: 2}
   thing2: {fileID: 100000, guid: ee765d082cdab4015ae95472d493c6b1, type: 2}
+  powerup: {fileID: 0}
   scoretrigger: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -15578,8 +15580,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingsToMake: 300
+  powerupsToMake: 20
   thing: {fileID: 100010, guid: f87754dcd046b4b83a8b5e5e81817ee0, type: 2}
   thing2: {fileID: 100000, guid: 955d23e498bf24ad6bdad3edbbb680a8, type: 2}
+  powerup: {fileID: 100000, guid: 053d1e0e5cfb24fa98b47139fa6623d3, type: 2}
   scoretrigger: {fileID: 100000, guid: 609c06f640ddd4c67a54289ddcb4ca0c, type: 2}
 --- !u!1001 &100100000
 Prefab:
