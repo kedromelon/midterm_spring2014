@@ -306,6 +306,7 @@ GameObject:
   - 33: {fileID: 3300026}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400004}
+  - 82: {fileID: 8200002}
   m_Layer: 0
   m_Name: Powerups Trigger
   m_TagString: Untagged
@@ -1091,6 +1092,64 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!82 &8200002
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100034}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: .5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!92 &9200000
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1209,6 +1268,7 @@ MonoBehaviour:
   sideacceleration: 2
   forwardacceleration: .75
   scoremanager: {fileID: 0}
+  hitsound: {fileID: 8300000, guid: cf722fcdf37024a1cb4489c3d7e04989, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1233,6 +1293,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupcounter: {fileID: 10200000}
+  powerups: 0
+  getparticle: {fileID: 100000, guid: f60dd3188145a41dea34c4643a28b679, type: 2}
+  useparticle: {fileID: 100000, guid: aa1e35037737f4b7d9acfa70035f7ef7, type: 2}
+  getsound: {fileID: 8300000, guid: 0e0ebc97b49e14860bb12d43c4427714, type: 3}
+  usesound: {fileID: 8300000, guid: 9ca8c0a67171a4808b0bd7a2c369b8ee, type: 3}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -16,6 +16,8 @@ public class MovePlayer : MonoBehaviour {
 
 	public ScoreManager scoremanager;
 
+	public AudioClip hitsound;
+
 	Animation playerAnimation;
 
 	int lastKeyPress = 1;
@@ -74,7 +76,12 @@ public class MovePlayer : MonoBehaviour {
 
 	void OnControllerColliderHit(ControllerColliderHit c){
 		if (c.gameObject.tag == "Obstacle"){
-			GetComponent<MovePlayer>().Lose();
+			if (GetComponentInChildren<PowerupTrigger>().powerups > 0){
+				GetComponentInChildren<PowerupTrigger>().DestroyObstacle(c.collider);
+			}else{
+				GetComponent<MovePlayer>().Lose();
+			}
+
 		}
 	}
 
@@ -97,6 +104,7 @@ public class MovePlayer : MonoBehaviour {
 		scoremanager.FreezeTimer();
 		scoremanager.MakeScoreRed();
 		ScreenShake2D.Shake(.25f,.5f);
+		GetComponent<AudioSource>().PlayOneShot(hitsound);
 		GetComponent<AudioSource>().Play();
 		StartCoroutine("EndAfterSeconds");
 	}
