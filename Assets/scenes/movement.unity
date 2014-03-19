@@ -8539,6 +8539,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupcounter: {fileID: 1183969514}
+  getparticle: {fileID: 100000, guid: f60dd3188145a41dea34c4643a28b679, type: 2}
+  useparticle: {fileID: 100000, guid: aa1e35037737f4b7d9acfa70035f7ef7, type: 2}
 --- !u!1 &992493094
 GameObject:
   m_ObjectHideFlags: 0
@@ -9068,6 +9070,14 @@ Prefab:
       propertyPath: scoremanager
       value: 
       objectReference: {fileID: 956704420}
+    - target: {fileID: 11400004, guid: a80878061b6754e9faaba5292902167f, type: 2}
+      propertyPath: getparticle
+      value: 
+      objectReference: {fileID: 100000, guid: f60dd3188145a41dea34c4643a28b679, type: 2}
+    - target: {fileID: 11400004, guid: a80878061b6754e9faaba5292902167f, type: 2}
+      propertyPath: useparticle
+      value: 
+      objectReference: {fileID: 100000, guid: aa1e35037737f4b7d9acfa70035f7ef7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a80878061b6754e9faaba5292902167f, type: 2}
   m_RootGameObject: {fileID: 381211601}

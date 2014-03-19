@@ -7,6 +7,9 @@ public class PowerupTrigger : MonoBehaviour {
 
 	int powerups;
 
+	public GameObject getparticle;
+	public GameObject useparticle;
+
 	void Start(){
 		powerups = 0;
 		powerupcounter.text = powerups.ToString();
@@ -17,6 +20,7 @@ public class PowerupTrigger : MonoBehaviour {
 			if (powerups > 0){
 				ScreenShake2D.Shake(.25f,1f);
 				Destroy(c.gameObject);
+				Instantiate(useparticle, c.transform.position, useparticle.transform.rotation);
 				transform.parent.GetComponent<MovePlayer>().scoremanager.IncrementScore();
 				powerups--;
 				powerupcounter.text = powerups.ToString();
@@ -25,6 +29,7 @@ public class PowerupTrigger : MonoBehaviour {
 		if (c.gameObject.tag == "Powerup"){
 			powerups++;
 			Destroy(c.gameObject);
+			Instantiate(getparticle, c.transform.position, getparticle.transform.rotation);
 			powerupcounter.text = powerups.ToString();
 		}
 	}
