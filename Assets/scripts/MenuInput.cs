@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MenuInput : MonoBehaviour {
 	
-	public string nextLevel = "typeInSceneNameHere";
+	public int nextLevel;
 	
 	// Update is called once per frame
 	void Update () {

@@ -216,5 +216,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0cd8a5cdd5047b0b17bb9d2a159aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonToPush: 32
-  nextLevel: movement
+  nextLevel: 1
