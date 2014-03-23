@@ -11,10 +11,12 @@ public class EndTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider c){
-		playertext.renderer.enabled = false;
-		endtext.renderer.enabled = true;
-		endtext.text = playertext.text;
-		CharacterController controller = c.GetComponent<CharacterController>();
-		controller.SimpleMove(controller.velocity/10f);
+		if (c.GetComponent<CharacterController>() != null){
+			playertext.renderer.enabled = false;
+			endtext.renderer.enabled = true;
+			endtext.text = playertext.text;
+			CharacterController controller = c.GetComponent<CharacterController>();
+			controller.SimpleMove(controller.velocity/10f);
+		}
 	}
 }
