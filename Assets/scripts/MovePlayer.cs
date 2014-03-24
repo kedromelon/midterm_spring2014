@@ -9,9 +9,14 @@ public class MovePlayer : MonoBehaviour {
 
 	public float gravity = 9.8f;
 	public float speed = 1f;
-	public float sidespeed = 10f;
+	float sidespeed;
+	public float sidespeeddivider = 4f;
 	public float sideacceleration = 10f;
 	public float forwardacceleration = 10f;
+
+	public ScoreManager scoremanager;
+
+	public AudioClip hitsound;
 
 	Animation playerAnimation;
 
@@ -28,7 +33,8 @@ public class MovePlayer : MonoBehaviour {
 		velocity = controller.velocity;
 		moveVector = Vector3.zero;
 
-		if (Input.GetKeyDown(KeyCode.J) && lastKeyPress == 1 || Input.GetKeyDown(KeyCode.K) && lastKeyPress == 0){
+		if (Input.GetKeyDown(KeyCode.J) && !Input.GetKeyDown(KeyCode.K) && lastKeyPress == 1 
+		    || Input.GetKeyDown(KeyCode.K) && !Input.GetKeyDown(KeyCode.J) && lastKeyPress == 0){
 			if (lastKeyPress == 1){
 				playerAnimation.Play("rightlegforward");
 				lastKeyPress = 0;
@@ -38,18 +44,27 @@ public class MovePlayer : MonoBehaviour {
 				lastKeyPress = 1;
 			}
 
+			moveVector += transform.forward;
+		}
+
+		if (velocity.z != 0f){
 			if (Input.GetKey(KeyCode.A))
 				moveVector -= transform.right;
 			if (Input.GetKey(KeyCode.D))
 				moveVector += transform.right;
+			sidespeed = velocity.z/sidespeeddivider;
 
-			moveVector += transform.forward;
 		}
 
 		if (controller.isGrounded){
-			velocity.x = Mathf.Lerp(velocity.x, moveVector.normalized.x*sidespeed, Time.deltaTime * sideacceleration);
-			velocity.z = Mathf.Lerp(velocity.z, moveVector.normalized.z*speed, Time.deltaTime * forwardacceleration);
+			velocity.x = Mathf.Lerp(velocity.x, moveVector.normalized.x*sidespeed, .03f * sideacceleration);
+			velocity.z = Mathf.Lerp(velocity.z, moveVector.normalized.z*speed, .03f * forwardacceleration);
 		}
+
+		//Debug.Log(Time.deltaTime);
+
+		//.03f?
+
 
 		if(!controller.isGrounded)
 			velocity.y -= gravity * Time.deltaTime;
@@ -58,10 +73,45 @@ public class MovePlayer : MonoBehaviour {
 		if (velocity.magnitude < .1f)
 			playerAnimation.Play("idle");
 
+		if (scoremanager.timer <= 0f){
+			scoremanager.timer = 0f;
+			Lose();
+		}
 	}
-	
 
+	void OnControllerColliderHit(ControllerColliderHit c){
+		if (c.gameObject.tag == "Obstacle"){
+			if (GetComponentInChildren<PowerupTrigger>().powerups > 0){
+				GetComponentInChildren<PowerupTrigger>().DestroyObstacle(c.collider);
+			}else{
+				GetComponent<MovePlayer>().Lose();
+			}
 
+		}
+	}
 
+	void OnTriggerEnter(Collider c){
+		if (c.gameObject.name == "Igloo") StartCoroutine("EndAfterSeconds");
+	}
+
+	void OnTriggerExit(Collider c){
+		if (c.tag == "Score") scoremanager.IncrementScore();
+	}
+
+	IEnumerator EndAfterSeconds(){
+		GetComponent<MovePlayer>().enabled = false;
+		yield return new WaitForSeconds(.5f);
+		ScreenShake2D.Shake(0f,0f);
+		Application.LoadLevel(Application.loadedLevel);
+	}
+
+	public void Lose(){
+		scoremanager.FreezeTimer();
+		scoremanager.MakeScoreRed();
+		ScreenShake2D.Shake(.25f,.5f);
+		GetComponent<AudioSource>().PlayOneShot(hitsound);
+		GetComponent<AudioSource>().Play();
+		StartCoroutine("EndAfterSeconds");
+	}
 	
 }
