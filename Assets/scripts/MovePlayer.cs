@@ -18,6 +18,8 @@ public class MovePlayer : MonoBehaviour {
 
 	public AudioClip hitsound;
 
+	public GameObject plus;
+
 	Animation playerAnimation;
 
 	int lastKeyPress = 1;
@@ -61,11 +63,6 @@ public class MovePlayer : MonoBehaviour {
 			velocity.z = Mathf.Lerp(velocity.z, moveVector.normalized.z*speed, .03f * forwardacceleration);
 		}
 
-		//Debug.Log(Time.deltaTime);
-
-		//.03f?
-
-
 		if(!controller.isGrounded)
 			velocity.y -= gravity * Time.deltaTime;
 		controller.Move(velocity * Time.deltaTime);
@@ -95,7 +92,11 @@ public class MovePlayer : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider c){
-		if (c.tag == "Score") scoremanager.IncrementScore();
+		if (c.tag == "Score"){
+			GameObject newplus = Instantiate(plus, transform.position + transform.up, Quaternion.identity) as GameObject;
+			newplus.transform.parent = transform;
+			scoremanager.IncrementScore();
+		} 
 	}
 
 	IEnumerator EndAfterSeconds(){

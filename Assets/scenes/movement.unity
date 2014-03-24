@@ -3555,6 +3555,7 @@ MonoBehaviour:
   forwardacceleration: .400000006
   scoremanager: {fileID: 956704420}
   hitsound: {fileID: 8300000, guid: cf722fcdf37024a1cb4489c3d7e04989, type: 3}
+  plus: {fileID: 100000, guid: b3a3f25399cfa4534910f853c6798215, type: 2}
 --- !u!23 &381211605
 Renderer:
   m_ObjectHideFlags: 0
@@ -7868,6 +7869,10 @@ Prefab:
       propertyPath: speed
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a80878061b6754e9faaba5292902167f, type: 2}
+      propertyPath: plus
+      value: 
+      objectReference: {fileID: 100000, guid: b3a3f25399cfa4534910f853c6798215, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a80878061b6754e9faaba5292902167f, type: 2}
   m_RootGameObject: {fileID: 381211601}
