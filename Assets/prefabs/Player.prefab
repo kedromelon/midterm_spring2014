@@ -1263,10 +1263,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 50
-  speed: 250
+  speed: 275
   sidespeeddivider: 4.5
-  sideacceleration: 2
-  forwardacceleration: .75
+  sideacceleration: 1.5
+  forwardacceleration: .300000012
   scoremanager: {fileID: 0}
   hitsound: {fileID: 8300000, guid: cf722fcdf37024a1cb4489c3d7e04989, type: 3}
 --- !u!114 &11400002

@@ -15579,8 +15579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1259688e69be4961abf682709aaea49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thingsToMake: 300
-  powerupsToMake: 20
+  thingsToMake: 200
+  powerupsToMake: 10
   thing: {fileID: 100010, guid: f87754dcd046b4b83a8b5e5e81817ee0, type: 2}
   thing2: {fileID: 100000, guid: 955d23e498bf24ad6bdad3edbbb680a8, type: 2}
   powerup: {fileID: 100000, guid: 053d1e0e5cfb24fa98b47139fa6623d3, type: 2}

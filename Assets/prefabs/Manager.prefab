@@ -40,7 +40,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 10
   countdownspeed: 1.29999995
-  incrementamount: .5
+  incrementamount: .174999997
   timertext: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:

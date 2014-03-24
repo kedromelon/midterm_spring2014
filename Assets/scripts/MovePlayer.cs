@@ -57,9 +57,14 @@ public class MovePlayer : MonoBehaviour {
 		}
 
 		if (controller.isGrounded){
-			velocity.x = Mathf.Lerp(velocity.x, moveVector.normalized.x*sidespeed, Time.deltaTime * sideacceleration);
-			velocity.z = Mathf.Lerp(velocity.z, moveVector.normalized.z*speed, Time.deltaTime * forwardacceleration);
+			velocity.x = Mathf.Lerp(velocity.x, moveVector.normalized.x*sidespeed, .03f * sideacceleration);
+			velocity.z = Mathf.Lerp(velocity.z, moveVector.normalized.z*speed, .03f * forwardacceleration);
 		}
+
+		//Debug.Log(Time.deltaTime);
+
+		//.03f?
+
 
 		if(!controller.isGrounded)
 			velocity.y -= gravity * Time.deltaTime;
