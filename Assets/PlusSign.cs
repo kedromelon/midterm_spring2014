@@ -2,15 +2,13 @@
 using System.Collections;
 
 public class PlusSign : MonoBehaviour {
-
-	Vector3 startposition;
+	
 	TextMesh text;
 	float r;
 	float speed;
 
 	// Use this for initialization
 	void Start () {
-		startposition = transform.position;
 		text = GetComponent<TextMesh>();
 		r = Random.Range(-2f,2f);
 		speed = Random.Range(3f,6f);
@@ -23,5 +21,6 @@ public class PlusSign : MonoBehaviour {
 		color.a -= Time.deltaTime * 2f;
 		text.renderer.material.color = color;
 		speed *= .9f;
+		if (color.a < .01f) Destroy(gameObject);
 	}
 }
