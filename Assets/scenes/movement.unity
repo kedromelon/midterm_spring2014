@@ -8297,6 +8297,7 @@ MonoBehaviour:
   countdownspeed: 1.29999995
   incrementamount: .25
   timertext: {fileID: 738700348}
+  isStopped: 0
 --- !u!1 &972433757
 GameObject:
   m_ObjectHideFlags: 0
@@ -10576,6 +10577,7 @@ MonoBehaviour:
   endtext: {fileID: 193538476}
   playertext: {fileID: 738700348}
   poweruptext: {fileID: 1183969514}
+  scoremanager: {fileID: 956704420}
 --- !u!65 &1376718376
 BoxCollider:
   m_ObjectHideFlags: 0

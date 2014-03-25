@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour {
 
 	public TextMesh timertext;
 
-	bool isStopped = false;
+	public bool isStopped = false;
 
 	// Update is called once per frame
 	void Update () {
