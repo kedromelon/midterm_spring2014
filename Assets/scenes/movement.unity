@@ -1638,6 +1638,53 @@ MeshFilter:
   m_PrefabInternal: {fileID: 583623168}
   m_GameObject: {fileID: 146174986}
   m_Mesh: {fileID: 4300022, guid: 67747a4bc8f654a8ea66af0133281bf4, type: 3}
+--- !u!1 &150837245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 150837246}
+  - 33: {fileID: 150837248}
+  - 65: {fileID: 150837247}
+  m_Layer: 0
+  m_Name: Igloo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &150837246
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150837245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0707097054, y: 8.70332241, z: 15.913208}
+  m_LocalScale: {x: 259.603455, y: 8.63800812, z: 8.63800812}
+  m_Children: []
+  m_Father: {fileID: 515317093}
+--- !u!65 &150837247
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150837245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &150837248
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150837245}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &155292683
 GameObject:
   m_ObjectHideFlags: 0
@@ -4760,6 +4807,7 @@ Transform:
   - {fileID: 74795861}
   - {fileID: 746379333}
   - {fileID: 567941699}
+  - {fileID: 150837246}
   - {fileID: 1750136992}
   - {fileID: 983707563}
   - {fileID: 374373913}
@@ -10577,6 +10625,7 @@ MonoBehaviour:
   endtext: {fileID: 193538476}
   playertext: {fileID: 738700348}
   poweruptext: {fileID: 1183969514}
+  endparticles: {fileID: 100000, guid: 716e7fb18736b419988f482769fba767, type: 2}
   scoremanager: {fileID: 956704420}
 --- !u!65 &1376718376
 BoxCollider:

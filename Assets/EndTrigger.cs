@@ -6,6 +6,7 @@ public class EndTrigger : MonoBehaviour {
 	public TextMesh endtext;
 	public TextMesh playertext;
 	public TextMesh poweruptext;
+	public GameObject endparticles;
 
 	public ScoreManager scoremanager;
 
@@ -23,6 +24,7 @@ public class EndTrigger : MonoBehaviour {
 			CharacterController controller = c.GetComponent<CharacterController>();
 			controller.SimpleMove(controller.velocity/10f);
 			GetComponent<AudioSource>().Play();
+			Instantiate(endparticles, c.transform.position,Quaternion.identity);
 		}
 	}
 }
