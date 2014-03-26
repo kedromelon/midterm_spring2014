@@ -93,8 +93,8 @@ public class MovePlayer : MonoBehaviour {
 
 	void OnTriggerExit(Collider c){
 		if (c.tag == "Score"){
-			GameObject newplus = Instantiate(plus, transform.position + transform.up, Quaternion.identity) as GameObject;
-			newplus.transform.parent = transform;
+			// GameObject newplus = Instantiate(plus, transform.position + transform.up, Quaternion.identity) as GameObject;
+			// newplus.transform.parent = transform;
 			scoremanager.IncrementScore();
 		} 
 	}
